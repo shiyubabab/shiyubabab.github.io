@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="学习,工作," />
 
 
 
@@ -79,12 +79,21 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="_GTO_">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Java Memory Model 示意图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解 Java Memory Model（JMM）与volatile关键字">
+<meta property="og:url" content="http://yoursite.com/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/index.html">
 <meta property="og:site_name" content="_GTO_">
+<meta property="og:description" content="Java Memory Model 示意图">
+<meta property="og:image" content="http://yoursite.com/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg">
+<meta property="article:published_time" content="2019-12-21T11:38:24.000Z">
+<meta property="article:modified_time" content="2019-12-21T13:47:05.750Z">
 <meta property="article:author" content="麻辣_GTO_小伙">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="工作">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg">
 
 
 
@@ -114,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/21/深入理解-Java-Memory-Model（JMM）与volatile关键字/"/>
 
 
 
 
 
-  <title>_GTO_</title>
+  <title>深入理解 Java Memory Model（JMM）与volatile关键字 | _GTO_</title>
   
 
 
@@ -139,8 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -233,172 +241,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/21/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E9%BA%BB%E8%BE%A3%E5%B0%8F%E4%BC%99%E7%9A%84%E7%B2%BE%E7%A5%9E%E4%B8%96%E7%95%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="麻辣_GTO_小伙">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="_GTO_">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/21/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E9%BA%BB%E8%BE%A3%E5%B0%8F%E4%BC%99%E7%9A%84%E7%B2%BE%E7%A5%9E%E4%B8%96%E7%95%8C/" itemprop="url">欢迎来到麻辣小伙的精神世界</a></h1>
-        
-
-        <div class="post-meta">
-          
-              <i class="fa fa-thumb-tack"></i>
-              <font color=green>置顶</font>
-              <span class="post-meta-divider">|</span>
-          
-
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-21T20:45:35+08:00">
-                2019-12-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A0%E8%90%A5%E5%85%BB%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">无营养生活</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A0%E8%90%A5%E5%85%BB%E7%94%9F%E6%B4%BB/%E5%85%B6%E4%BB%96%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" itemprop="url" rel="index">
-                    <span itemprop="name">其他奇技淫巧</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="/2019/12/21/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E9%BA%BB%E8%BE%A3%E5%B0%8F%E4%BC%99%E7%9A%84%E7%B2%BE%E7%A5%9E%E4%B8%96%E7%95%8C/IMG_0248.JPG" alt="0248"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/12/21/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E9%BA%BB%E8%BE%A3%E5%B0%8F%E4%BC%99%E7%9A%84%E7%B2%BE%E7%A5%9E%E4%B8%96%E7%95%8C/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -428,9 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/" itemprop="url">深入理解 Java Memory Model（JMM）与volatile关键字</a></h1>
+          <h1 class="post-title" itemprop="name headline">深入理解 Java Memory Model（JMM）与volatile关键字</h1>
         
 
         <div class="post-meta">
@@ -526,17 +369,22 @@
       
 
       
-        
-          <h2 id="Java-Memory-Model"><a href="#Java-Memory-Model" class="headerlink" title="Java Memory Model"></a>Java Memory Model</h2><ul>
-<li><strong>示意图</strong><br><img src="/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt="JMM示意图"></li></ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h2 id="Java-Memory-Model"><a href="#Java-Memory-Model" class="headerlink" title="Java Memory Model"></a>Java Memory Model</h2><ul>
+<li><strong>示意图</strong><br><img src="/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt="JMM示意图"><a id="more"></a></li>
+<li><strong>内存划分</strong><br>内存主要划分为多级缓存和主内存，cpu在执行线程时将主内存中的共享变量读入cache缓存中，线程对缓存中的共享变量进行修改操作。当存在多核cpu时，会导致不同线程读取共享变量不一致的问题。</li>
+<li><strong>内存交互操作</strong><br>lock     （锁定）：作用于主内存的变量，把一个变量标识为线程独占状态<br>unlock （解锁）：作用于主内存的变量，它把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程锁定<br>read    （读取）：作用于主内存变量，它把一个变量的值从主内存传输到线程的工作内存中，以便随后的load动作使用<br>load     （载入）：作用于工作内存的变量，它把read操作从主存中变量放入工作内存中<br>use      （使用）：作用于工作内存中的变量，它把工作内存中的变量传输给执行引擎，每当虚拟机遇到一个需要使用到变量的值，就会使用到这个指令<br>assign  （赋值）：作用于工作内存中的变量，它把一个从执行引擎中接受到的值放入工作内存的变量副本中<br>store    （存储）：作用于主内存中的变量，它把一个从工作内存中一个变量的值传送到主内存中，以便后续的write使用<br>write 　（写入）：作用于主内存中的变量，它把store操作从工作内存中得到的变量的值放入主内存的变量中</li>
+<li><strong>模型特征</strong><br>原子性：即一个操作或者多个操作 要么全部执行并且执行的过程不会被任何因素打断，要么就都不执行。（使用synchronized关键字实现，及将一组操作上锁。volatile关键字无法实现这一点）<br>一个很经典的例子就是银行账户转账问题<br>可见性：可见性是指当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。（可用volatile关键字实现）<br>对于可见性，Java提供了volatile关键字来保证可见性。<br>当一个共享变量被volatile修饰时，它会保证修改的值会立即被更新到主存，当有其他线程需要读取时，它会去内存中读取新值。<br>而普通的共享变量不能保证可见性，因为普通共享变量被修改之后，什么时候被写入主存是不确定的，当其他线程去读取时，此时内存中可能还是原来的旧值，因此无法保证可见性。<br>另外，通过synchronized和Lock也能够保证可见性，synchronized和Lock能保证同一时刻只有一个线程获取锁然后执行同步代码，并且在释放锁之前会将对变量的修改刷新到主存当中。因此可以保证可见性。<br>有序性：在Java内存模型中，允许编译器和处理器对指令进行重排序，但是重排序过程不会影响到单线程程序的执行，却会影响到多线程并发执行的正确性。<br>在Java里面，可以通过volatile关键字来保证一定的“有序性”。</li>
+</ul>
+<hr>
+<h2 id="volatile关键字"><a href="#volatile关键字" class="headerlink" title="volatile关键字"></a>volatile关键字</h2><ul>
+<li><p><strong>JMM工作流程示意图</strong><br><img src="/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt="JMM工作流程示意图"></p>
+</li>
+<li><p><strong>控制共享变量</strong><br>1、总线上锁机制：一个cpu在访问主内存时对总线进行上锁，只有当其一系列操作结束后再unlock，其他的cpu再进行内存访问，来实现共享变量的一致。这种方法效率低且开销大。<br>2、MESI总线嗅探机制：当一个cpu通过总线想要执行store操作时，总线就会接受这个信息，并将其他cpu中的同一变量置为失效，从而来达到控制共享变量一致。</p>
+</li>
+<li><p><strong>volatile关键字实现原理（简述）</strong><br>其并不是用java编写实现的，而是使用c语言实现的，查看其汇编语言可知在cpu执行store前对总线进行lock，同时结合emsi协议来控制变量一致。<br>当写一个volatile变量时，JMM会把该线程对应的本地内存中的共享变量值刷新到主内存。<br>volatile修饰的变量不允许线程重排序</p>
+</li>
+</ul>
+
       
     </div>
     
@@ -551,14 +399,38 @@
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag"># 学习</a>
+          
+            <a href="/tags/%E5%B7%A5%E4%BD%9C/" rel="tag"># 工作</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/21/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E9%BA%BB%E8%BE%A3%E5%B0%8F%E4%BC%99%E7%9A%84%E7%B2%BE%E7%A5%9E%E4%B8%96%E7%95%8C/" rel="prev" title="欢迎来到麻辣小伙的精神世界">
+                欢迎来到麻辣小伙的精神世界 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -568,10 +440,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -579,6 +452,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -599,8 +476,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -664,6 +550,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-Memory-Model"><span class="nav-number">1.</span> <span class="nav-text">Java Memory Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile关键字"><span class="nav-number">2.</span> <span class="nav-text">volatile关键字</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -804,6 +706,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
