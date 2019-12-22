@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="SSM整合练习以图书管理系统为例（从狂神说Java中学）1.0环境及要求环境 IDEA最新版 MySQL 5.7.19 Tomcat 9 Maven 3.6要求 帅气逼人，美丽动人。 狂神老师说：需要熟练掌握MySQL数据库，Spring，SpringMVC及MyBatis知识，简单的前端知识。1.1项目编写数据库的搭建以及准备 创建名为ssmbuild的数据库来存储书籍资料123CREATE D">
+<meta name="description" content="SSM整合练习以图书管理系统为例（从狂神说Java中学）1.0环境及要求环境 IDEA最新版 MySQL 5.7.19 Tomcat 9 Maven 3.6要求 帅气逼人，美丽动人。 狂神老师说：需要熟练掌握MySQL数据库，Spring，SpringMVC及MyBatis知识，简单的前端知识。1.1项目编写">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSM整合练习">
 <meta property="og:url" content="http://yoursite.com/2019/12/22/SSM%E6%95%B4%E5%90%88%E7%BB%83%E4%B9%A0/index.html">
 <meta property="og:site_name" content="_GTO_">
-<meta property="og:description" content="SSM整合练习以图书管理系统为例（从狂神说Java中学）1.0环境及要求环境 IDEA最新版 MySQL 5.7.19 Tomcat 9 Maven 3.6要求 帅气逼人，美丽动人。 狂神老师说：需要熟练掌握MySQL数据库，Spring，SpringMVC及MyBatis知识，简单的前端知识。1.1项目编写数据库的搭建以及准备 创建名为ssmbuild的数据库来存储书籍资料123CREATE D">
+<meta property="og:description" content="SSM整合练习以图书管理系统为例（从狂神说Java中学）1.0环境及要求环境 IDEA最新版 MySQL 5.7.19 Tomcat 9 Maven 3.6要求 帅气逼人，美丽动人。 狂神老师说：需要熟练掌握MySQL数据库，Spring，SpringMVC及MyBatis知识，简单的前端知识。1.1项目编写">
 <meta property="og:image" content="http://yoursite.com/2019/12/22/SSM%E6%95%B4%E5%90%88%E7%BB%83%E4%B9%A0/%E4%B8%BB%E9%A1%B5.png">
 <meta property="og:image" content="http://yoursite.com/2019/12/22/SSM%E6%95%B4%E5%90%88%E7%BB%83%E4%B9%A0/%E4%B9%A6%E7%B1%8D%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA.png">
 <meta property="og:image" content="http://yoursite.com/2019/12/22/SSM%E6%95%B4%E5%90%88%E7%BB%83%E4%B9%A0/%E4%B9%A6%E7%B1%8D%E6%B7%BB%E5%8A%A0.png">
@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/12/22/SSM%E6%95%B4%E5%90%88%E7%BB%83%E4%B9%A0/%E4%B9%A6%E7%B1%8D%E4%BF%AE%E6%94%B9%E5%90%8E.png">
 <meta property="og:image" content="http://yoursite.com/2019/12/22/SSM%E6%95%B4%E5%90%88%E7%BB%83%E4%B9%A0/%E6%9F%A5%E6%89%BE.png">
 <meta property="article:published_time" content="2019-12-22T05:35:02.000Z">
-<meta property="article:modified_time" content="2019-12-22T12:32:07.696Z">
+<meta property="article:modified_time" content="2019-12-22T12:40:02.457Z">
 <meta property="article:author" content="麻辣_GTO_小伙">
 <meta property="article:tag" content="Spring">
 <meta property="article:tag" content="SpringMVC">
@@ -358,7 +358,8 @@
 <li>Tomcat 9</li>
 <li>Maven 3.6<h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3></li>
 <li>帅气逼人，美丽动人。</li>
-<li>狂神老师说：需要熟练掌握MySQL数据库，Spring，SpringMVC及MyBatis知识，简单的前端知识。<h2 id="1-1项目编写"><a href="#1-1项目编写" class="headerlink" title="1.1项目编写"></a>1.1项目编写</h2><h3 id="数据库的搭建以及准备"><a href="#数据库的搭建以及准备" class="headerlink" title="数据库的搭建以及准备"></a>数据库的搭建以及准备</h3></li>
+<li>狂神老师说：需要熟练掌握MySQL数据库，Spring，SpringMVC及MyBatis知识，简单的前端知识。<h2 id="1-1项目编写"><a href="#1-1项目编写" class="headerlink" title="1.1项目编写"></a>1.1项目编写</h2><a id="more"></a>
+<h3 id="数据库的搭建以及准备"><a href="#数据库的搭建以及准备" class="headerlink" title="数据库的搭建以及准备"></a>数据库的搭建以及准备</h3></li>
 <li>创建名为ssmbuild的数据库来存储书籍资料<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE &#96;ssmbuild&#96;;</span><br><span class="line">  </span><br><span class="line">USE &#96;ssmbuild&#96;;</span><br></pre></td></tr></table></figure></li>
 <li>创建名为books的表格<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE &#96;books&#96; (</span><br><span class="line">  &#96;bookID&#96; INT(10) NOT NULL AUTO_INCREMENT COMMENT &#39;书id&#39;,</span><br><span class="line">  &#96;bookName&#96; VARCHAR(100) NOT NULL COMMENT &#39;书名&#39;,</span><br><span class="line">  &#96;bookCounts&#96; INT(11) NOT NULL COMMENT &#39;数量&#39;,</span><br><span class="line">  &#96;detail&#96; VARCHAR(200) NOT NULL COMMENT &#39;描述&#39;,</span><br><span class="line">  KEY &#96;bookID&#96; (&#96;bookID&#96;)</span><br><span class="line">) ENGINE&#x3D;INNODB DEFAULT CHARSET&#x3D;utf8</span><br></pre></td></tr></table></figure></li>
 <li>向表格中装填数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT  INTO &#96;books&#96;(&#96;bookID&#96;,&#96;bookName&#96;,&#96;bookCounts&#96;,&#96;detail&#96;)VALUES </span><br><span class="line">(1,&#39;Java&#39;,1,&#39;从入门到放弃&#39;),</span><br><span class="line">(2,&#39;MySQL&#39;,10,&#39;从删库到跑路&#39;),</span><br><span class="line">(3,&#39;Linux&#39;,5,&#39;从进门到进牢&#39;);</span><br></pre></td></tr></table></figure></li>

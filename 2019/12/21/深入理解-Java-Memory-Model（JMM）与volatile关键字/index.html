@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="Java Memory Model 示意图">
+<meta name="description" content="Java Memory Model（没得完成，努力更新中） 示意图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解 Java Memory Model（JMM）与volatile关键字">
 <meta property="og:url" content="http://yoursite.com/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/index.html">
 <meta property="og:site_name" content="_GTO_">
-<meta property="og:description" content="Java Memory Model 示意图">
+<meta property="og:description" content="Java Memory Model（没得完成，努力更新中） 示意图">
 <meta property="og:image" content="http://yoursite.com/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg">
 <meta property="article:published_time" content="2019-12-21T11:38:24.000Z">
-<meta property="article:modified_time" content="2019-12-22T05:39:18.940Z">
+<meta property="article:modified_time" content="2019-12-22T12:44:43.246Z">
 <meta property="article:author" content="麻辣_GTO_小伙">
 <meta property="article:tag" content="多线程">
 <meta property="article:tag" content="JMM">
@@ -347,7 +347,7 @@
       
 
       
-        <h2 id="Java-Memory-Model"><a href="#Java-Memory-Model" class="headerlink" title="Java Memory Model"></a>Java Memory Model</h2><ul>
+        <h2 id="Java-Memory-Model（没得完成，努力更新中）"><a href="#Java-Memory-Model（没得完成，努力更新中）" class="headerlink" title="Java Memory Model（没得完成，努力更新中）"></a>Java Memory Model（没得完成，努力更新中）</h2><ul>
 <li><strong>示意图</strong><br><img src="/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt="JMM示意图"><a id="more"></a></li>
 <li><strong>内存划分</strong><br>内存主要划分为多级缓存和主内存，cpu在执行线程时将主内存中的共享变量读入cache缓存中，线程对缓存中的共享变量进行修改操作。当存在多核cpu时，会导致不同线程读取共享变量不一致的问题。</li>
 <li><strong>内存交互操作</strong><br>lock     （锁定）：作用于主内存的变量，把一个变量标识为线程独占状态<br>unlock （解锁）：作用于主内存的变量，它把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程锁定<br>read    （读取）：作用于主内存变量，它把一个变量的值从主内存传输到线程的工作内存中，以便随后的load动作使用<br>load     （载入）：作用于工作内存的变量，它把read操作从主存中变量放入工作内存中<br>use      （使用）：作用于工作内存中的变量，它把工作内存中的变量传输给执行引擎，每当虚拟机遇到一个需要使用到变量的值，就会使用到这个指令<br>assign  （赋值）：作用于工作内存中的变量，它把一个从执行引擎中接受到的值放入工作内存的变量副本中<br>store    （存储）：作用于主内存中的变量，它把一个从工作内存中一个变量的值传送到主内存中，以便后续的write使用<br>write 　（写入）：作用于主内存中的变量，它把store操作从工作内存中得到的变量的值放入主内存的变量中</li>
@@ -538,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-Memory-Model"><span class="nav-number">1.</span> <span class="nav-text">Java Memory Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile关键字"><span class="nav-number">2.</span> <span class="nav-text">volatile关键字</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-Memory-Model（没得完成，努力更新中）"><span class="nav-number">1.</span> <span class="nav-text">Java Memory Model（没得完成，努力更新中）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile关键字"><span class="nav-number">2.</span> <span class="nav-text">volatile关键字</span></a></li></ol></div>
             
 
           </div>
