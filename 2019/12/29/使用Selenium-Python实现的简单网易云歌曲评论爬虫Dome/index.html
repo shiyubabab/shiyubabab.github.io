@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="多线程,JMM," />
+  <meta name="keywords" content="爬虫,Selenium," />
 
 
 
@@ -79,21 +79,20 @@
 
 
 
-<meta name="description" content="Java Memory Model（没得完成，努力更新中） 示意图">
+<meta name="description" content="使用Selenium+Python实现的简单网易云歌曲评论爬虫DomePython代码部分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解 Java Memory Model（JMM）与volatile关键字">
-<meta property="og:url" content="http://yoursite.com/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/index.html">
+<meta property="og:title" content="使用Selenium+Python实现的简单网易云歌曲评论爬虫Dome">
+<meta property="og:url" content="http://yoursite.com/2019/12/29/%E4%BD%BF%E7%94%A8Selenium-Python%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%AE%80%E5%8D%95%E7%BD%91%E6%98%93%E4%BA%91%E6%AD%8C%E6%9B%B2%E8%AF%84%E8%AE%BA%E7%88%AC%E8%99%ABDome/index.html">
 <meta property="og:site_name" content="_GTO_">
-<meta property="og:description" content="Java Memory Model（没得完成，努力更新中） 示意图">
-<meta property="og:image" content="http://yoursite.com/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg">
-<meta property="article:published_time" content="2019-12-21T11:38:24.000Z">
-<meta property="article:modified_time" content="2019-12-22T12:44:43.246Z">
+<meta property="og:description" content="使用Selenium+Python实现的简单网易云歌曲评论爬虫DomePython代码部分">
+<meta property="og:image" content="http://yoursite.com/2019/12/29/%E4%BD%BF%E7%94%A8Selenium-Python%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%AE%80%E5%8D%95%E7%BD%91%E6%98%93%E4%BA%91%E6%AD%8C%E6%9B%B2%E8%AF%84%E8%AE%BA%E7%88%AC%E8%99%ABDome/result.png">
+<meta property="article:published_time" content="2019-12-29T12:04:02.000Z">
+<meta property="article:modified_time" content="2019-12-29T12:13:47.970Z">
 <meta property="article:author" content="麻辣_GTO_小伙">
-<meta property="article:tag" content="多线程">
-<meta property="article:tag" content="JMM">
+<meta property="article:tag" content="爬虫">
+<meta property="article:tag" content="Selenium">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2019/12/29/%E4%BD%BF%E7%94%A8Selenium-Python%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%AE%80%E5%8D%95%E7%BD%91%E6%98%93%E4%BA%91%E6%AD%8C%E6%9B%B2%E8%AF%84%E8%AE%BA%E7%88%AC%E8%99%ABDome/result.png">
 
 
 
@@ -123,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/12/21/深入理解-Java-Memory-Model（JMM）与volatile关键字/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/29/使用Selenium-Python实现的简单网易云歌曲评论爬虫Dome/"/>
 
 
 
 
 
-  <title>深入理解 Java Memory Model（JMM）与volatile关键字 | _GTO_</title>
+  <title>使用Selenium+Python实现的简单网易云歌曲评论爬虫Dome | _GTO_</title>
   
 
 
@@ -256,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/29/%E4%BD%BF%E7%94%A8Selenium-Python%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%AE%80%E5%8D%95%E7%BD%91%E6%98%93%E4%BA%91%E6%AD%8C%E6%9B%B2%E8%AF%84%E8%AE%BA%E7%88%AC%E8%99%ABDome/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="麻辣_GTO_小伙">
@@ -273,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">深入理解 Java Memory Model（JMM）与volatile关键字</h1>
+          <h1 class="post-title" itemprop="name headline">使用Selenium+Python实现的简单网易云歌曲评论爬虫Dome</h1>
         
 
         <div class="post-meta">
@@ -287,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-21T19:38:24+08:00">
-                2019-12-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-29T20:04:02+08:00">
+                2019-12-29
               </time>
             
 
@@ -310,8 +309,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">Java基础</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -347,21 +346,9 @@
       
 
       
-        <h2 id="Java-Memory-Model（没得完成，努力更新中）"><a href="#Java-Memory-Model（没得完成，努力更新中）" class="headerlink" title="Java Memory Model（没得完成，努力更新中）"></a>Java Memory Model（没得完成，努力更新中）</h2><ul>
-<li><strong>示意图</strong><br><img src="/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt="JMM示意图"><a id="more"></a></li>
-<li><strong>内存划分</strong><br>内存主要划分为多级缓存和主内存，cpu在执行线程时将主内存中的共享变量读入cache缓存中，线程对缓存中的共享变量进行修改操作。当存在多核cpu时，会导致不同线程读取共享变量不一致的问题。</li>
-<li><strong>内存交互操作</strong><br>lock     （锁定）：作用于主内存的变量，把一个变量标识为线程独占状态<br>unlock （解锁）：作用于主内存的变量，它把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程锁定<br>read    （读取）：作用于主内存变量，它把一个变量的值从主内存传输到线程的工作内存中，以便随后的load动作使用<br>load     （载入）：作用于工作内存的变量，它把read操作从主存中变量放入工作内存中<br>use      （使用）：作用于工作内存中的变量，它把工作内存中的变量传输给执行引擎，每当虚拟机遇到一个需要使用到变量的值，就会使用到这个指令<br>assign  （赋值）：作用于工作内存中的变量，它把一个从执行引擎中接受到的值放入工作内存的变量副本中<br>store    （存储）：作用于主内存中的变量，它把一个从工作内存中一个变量的值传送到主内存中，以便后续的write使用<br>write 　（写入）：作用于主内存中的变量，它把store操作从工作内存中得到的变量的值放入主内存的变量中</li>
-<li><strong>模型特征</strong><br>原子性：即一个操作或者多个操作 要么全部执行并且执行的过程不会被任何因素打断，要么就都不执行。（使用synchronized关键字实现，及将一组操作上锁。volatile关键字无法实现这一点）<br>一个很经典的例子就是银行账户转账问题<br>可见性：可见性是指当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。（可用volatile关键字实现）<br>对于可见性，Java提供了volatile关键字来保证可见性。<br>当一个共享变量被volatile修饰时，它会保证修改的值会立即被更新到主存，当有其他线程需要读取时，它会去内存中读取新值。<br>而普通的共享变量不能保证可见性，因为普通共享变量被修改之后，什么时候被写入主存是不确定的，当其他线程去读取时，此时内存中可能还是原来的旧值，因此无法保证可见性。<br>另外，通过synchronized和Lock也能够保证可见性，synchronized和Lock能保证同一时刻只有一个线程获取锁然后执行同步代码，并且在释放锁之前会将对变量的修改刷新到主存当中。因此可以保证可见性。<br>有序性：在Java内存模型中，允许编译器和处理器对指令进行重排序，但是重排序过程不会影响到单线程程序的执行，却会影响到多线程并发执行的正确性。<br>在Java里面，可以通过volatile关键字来保证一定的“有序性”。</li>
-</ul>
-<hr>
-<h2 id="volatile关键字"><a href="#volatile关键字" class="headerlink" title="volatile关键字"></a>volatile关键字</h2><ul>
-<li><p><strong>JMM工作流程示意图</strong><br><img src="/2019/12/21/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-Memory-Model%EF%BC%88JMM%EF%BC%89%E4%B8%8Evolatile%E5%85%B3%E9%94%AE%E5%AD%97/JMM%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt="JMM工作流程示意图"></p>
-</li>
-<li><p><strong>控制共享变量</strong><br>1、总线上锁机制：一个cpu在访问主内存时对总线进行上锁，只有当其一系列操作结束后再unlock，其他的cpu再进行内存访问，来实现共享变量的一致。这种方法效率低且开销大。<br>2、MESI总线嗅探机制：当一个cpu通过总线想要执行store操作时，总线就会接受这个信息，并将其他cpu中的同一变量置为失效，从而来达到控制共享变量一致。</p>
-</li>
-<li><p><strong>volatile关键字实现原理（简述）</strong><br>其并不是用java编写实现的，而是使用c语言实现的，查看其汇编语言可知在cpu执行store前对总线进行lock，同时结合emsi协议来控制变量一致。<br>当写一个volatile变量时，JMM会把该线程对应的本地内存中的共享变量值刷新到主内存。<br>volatile修饰的变量不允许线程重排序</p>
-</li>
-</ul>
+        <h1 id="使用Selenium-Python实现的简单网易云歌曲评论爬虫Dome"><a href="#使用Selenium-Python实现的简单网易云歌曲评论爬虫Dome" class="headerlink" title="使用Selenium+Python实现的简单网易云歌曲评论爬虫Dome"></a>使用Selenium+Python实现的简单网易云歌曲评论爬虫Dome</h1><h2 id="Python代码部分"><a href="#Python代码部分" class="headerlink" title="Python代码部分"></a>Python代码部分</h2><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from selenium import webdriver</span><br><span class="line">def saveDate(item):</span><br><span class="line">    with open(&#39;yun.txt&#39;, &#39;a&#39;, encoding&#x3D;&#39;utf-8&#39;) as f:</span><br><span class="line">        f.write(item + &#39;\n&#39;)</span><br><span class="line">class ynuSp(object):</span><br><span class="line">    def __init__(self, url):</span><br><span class="line">        self.url &#x3D; url</span><br><span class="line">        self.driver &#x3D; webdriver.Firefox()</span><br><span class="line">    def getContent(self):</span><br><span class="line">        self.driver.get(self.url)</span><br><span class="line">        self.driver.switch_to.frame(0)</span><br><span class="line">        js &#x3D; &quot;window.scrollBy(0,8000)&quot;</span><br><span class="line">        self.driver.execute_script(js)</span><br><span class="line">        for page in range(5):</span><br><span class="line">            selecets&#x3D;self.driver.find_elements_by_xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;cmmts j-flag&quot;]&#x2F;div&#39;)</span><br><span class="line">            for selecet in selecets:</span><br><span class="line">               text&#x3D;selecet.find_element_by_xpath(&#39;.&#x2F;&#x2F;div[@class&#x3D;&quot;cnt f-brk&quot;]&#39;).text</span><br><span class="line">               print(text)</span><br><span class="line">               saveDate(text)</span><br><span class="line">            nextPage &#x3D; self.driver.find_element_by_partial_link_text(&quot;下一页&quot;)</span><br><span class="line">            nextPage.click()</span><br><span class="line">            time.sleep(.5)</span><br><span class="line">        self.driver.quit()</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    url &#x3D; &#39;https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;song?id&#x3D;26427663&#39;</span><br><span class="line">    ynuSp &#x3D; ynuSp(url)</span><br><span class="line">    ynuSp.getContent()</span><br></pre></td></tr></table></figure>
+<h2 id="Dome结果"><a href="#Dome结果" class="headerlink" title="Dome结果"></a>Dome结果</h2><p><img src="/2019/12/29/%E4%BD%BF%E7%94%A8Selenium-Python%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%AE%80%E5%8D%95%E7%BD%91%E6%98%93%E4%BA%91%E6%AD%8C%E6%9B%B2%E8%AF%84%E8%AE%BA%E7%88%AC%E8%99%ABDome/result.png" alt="jieguo"></p>
 
       
     </div>
@@ -379,9 +366,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag"># 多线程</a>
+            <a href="/tags/%E7%88%AC%E8%99%AB/" rel="tag"># 爬虫</a>
           
-            <a href="/tags/JMM/" rel="tag"># JMM</a>
+            <a href="/tags/Selenium/" rel="tag"># Selenium</a>
           
         </div>
       
@@ -394,15 +381,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/12/23/%E8%87%AA%E5%B7%B1%E4%BA%B2%E6%89%8B%E6%90%AD%E5%BB%BA%E7%9A%84%E7%AE%80%E5%8D%95%E5%8C%BA%E5%9D%97%E9%93%BEdome-java%E5%AE%9E%E7%8E%B0-%E5%B7%A5%E4%BD%9C%E9%87%8F%E8%AF%81%E6%98%8E%E6%9C%BA%E5%88%B6-Poof-Of-Work-POW-%E6%AF%94%E7%89%B9%E5%B8%81-%E5%8C%BA%E5%9D%97%E7%9A%84%E9%AA%8C%E8%AF%81%E4%B8%8E%E7%AF%A1%E6%94%B9/" rel="next" title="自己亲手搭建的简单区块链dome|java实现|工作量证明机制(Poof Of Work POW)|比特币|区块的验证与篡改">
+                <i class="fa fa-chevron-left"></i> 自己亲手搭建的简单区块链dome|java实现|工作量证明机制(Poof Of Work POW)|比特币|区块的验证与篡改
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/21/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E9%BA%BB%E8%BE%A3%E5%B0%8F%E4%BC%99%E7%9A%84%E7%B2%BE%E7%A5%9E%E4%B8%96%E7%95%8C/" rel="prev" title="欢迎来到麻辣小伙的精神世界">
-                欢迎来到麻辣小伙的精神世界 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -538,7 +525,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-Memory-Model（没得完成，努力更新中）"><span class="nav-number">1.</span> <span class="nav-text">Java Memory Model（没得完成，努力更新中）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile关键字"><span class="nav-number">2.</span> <span class="nav-text">volatile关键字</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Selenium-Python实现的简单网易云歌曲评论爬虫Dome"><span class="nav-number">1.</span> <span class="nav-text">使用Selenium+Python实现的简单网易云歌曲评论爬虫Dome</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python代码部分"><span class="nav-number">1.1.</span> <span class="nav-text">Python代码部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dome结果"><span class="nav-number">1.2.</span> <span class="nav-text">Dome结果</span></a></li></ol></li></ol></div>
             
 
           </div>
